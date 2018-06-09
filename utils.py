@@ -1,11 +1,11 @@
 # Utility
 
 import numpy as np
+import os
 
 from os import listdir, mkdir, sep
 from os.path import join, exists, splitext
 from scipy.misc import imread, imsave, imresize
-
 
 def list_images(directory):
     images = []
@@ -13,17 +13,50 @@ def list_images(directory):
         name = file.lower()
         if name.endswith('.png'):
             images.append(join(directory, file))
+        elif name.endswith('jpg'):
+            images.append(join(directory, file))
+        elif name.endswith('.jepg'):
+            images.append(join(directory, file))
+    return images
+
+def list_images_del(directory):
+    images = []
+    for file in listdir(directory):
+        name = file.lower()
+        if name.endswith('.png'):
+            images.append(join(directory, file))   
         elif name.endswith('.jpg'):
             images.append(join(directory, file))
         elif name.endswith('.jpeg'):
             images.append(join(directory, file))
+    delete_wrong_images(directory)
     return images
 
-
+def delete_wrong_images(directory):
+    for file in listdir(directory):
+        path = join(directory, file)
+        print(f"checking validation of {path}...")
+        try:
+            image = imread(path, mode='RGB')
+        except:
+            print(f"{path} is too big. Remove it")
+            os.remove(path)
+            continue
+        if len(image.shape) == 0:
+            print(f"{path} has irregular shape: {image.shape}. Please remove this image and run it again.")
+            os.remove(path)
+     
 def get_train_images(paths, resize_len=512, crop_height=256, crop_width=256):
     images = []
     for path in paths:
-        image = imread(path, mode='RGB')
+        try:
+            image = imread(path, mode='RGB')
+        except:
+            print(f"{path} is too big to read. Please remove this image and run it again")
+            continue
+        if len(image.shape) == 0:
+            print(f"{path} has irregular shape: {image.shape}. Please remove this image and run ti again.")
+            continue
         height, width, _ = image.shape
 
         if height < width:
