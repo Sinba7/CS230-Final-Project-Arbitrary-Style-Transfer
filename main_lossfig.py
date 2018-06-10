@@ -5,10 +5,10 @@ from __future__ import print_function
 
 from train_lossfig import train
 from generate import generate
-from utils import list_images 
-#from utils import list_images_del
+from util_clean import list_images 
+#from util_clean import list_images_del
 
-IS_TRAINING = True
+IS_TRAINING = False
 
 ENCODER_WEIGHTS_PATH = './vgg19_normalised.npz'
 
