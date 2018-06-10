@@ -1,6 +1,6 @@
 
 # Style Transfer Network
-# Encoder -> AdaIN -> Decoder
+# Encoder -> AdaIN/CORAL/Adalip/Histogram -> Decoder
 
 import tensorflow as tf
 
@@ -31,9 +31,11 @@ class StyleTransferNet(object):
         self.encoded_content_layers = enc_c_layers
         self.encoded_style_layers   = enc_s_layers
 
-        # pass the encoded images to CORAL
+        # pass the encoded images to AdaIN/CORAL
+        # target_features = norm_utils.AdaIN(enc_c, enc_s)
         target_features = norm_utils.CORAL(enc_c, enc_s)
         self.target_features = target_features
+        
 
         # decode target features back to image
         generated_img = self.decoder.decode(target_features)
