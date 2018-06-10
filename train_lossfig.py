@@ -6,7 +6,7 @@ import numpy as np
 import tensorflow as tf
 
 from style_transfer_net import StyleTransferNet
-from utils import get_train_images
+from util_clean import get_train_images
 
 
 STYLE_LAYERS  = ('relu1_1', 'relu2_1', 'relu3_1', 'relu4_1')
