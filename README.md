@@ -25,7 +25,7 @@ By default,
 3) The weights file of the pre-trained VGG-19 lies in the current working directory.
 4) The MS-COCO images dataset for training lies in the folder "../MS_COCO/".
 5) The WikiArt images dataset for training lies in the folder "../WikiArt/". 
-6) The checkpoint files of trained models lie in the folder "./models/models.xx.xx/." (You should change this path to the folder that holds the trained weights for the model you want to train/check. For example, folder "./models/models.Adain.2.0.10^-3/." holds the ckpts for our trained model with AadIN layer and weights = 2.0, learning_rate = 10^-4.)
+6) The checkpoint files of trained models lie in the folder "./models/models.xx.xx/." (You should unzip the model.zip file before inferring and change this path to the folder that holds the trained weights for the model you want to train/check. For example, folder "./models/models.Adain.2.0.10^-3/." holds the ckpts for our trained model with AadIN layer and weights = 2.0, learning_rate = 10^-4.)
 7) After inferring procedure, the stylized images will be generated and output to the folder "./outputs/"
 
 For inferring, you should make sure 1), 2), 3) and 6) are prepared correctly.
