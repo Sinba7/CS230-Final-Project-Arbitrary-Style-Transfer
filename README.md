@@ -5,7 +5,7 @@ This file contains the code we implement/modified for our cs230 final project: A
 We implement our code based on https://github.com/elleryqueenhomels/arbitrary_style_transfer.git The code we wrote/modified is as following:
 1) In the utils_clean.py, we add a filter function to clean out WikiArt images that are too large to train or has zero pixel;
 2) In the adaptive_instance_norm_modv2.py, we wrote the matching function for three other matching method besides AdaIN layer, which are Correlation Alignment layer, Histogram Matching layer and AdaClip layer.
-3) In the train_monitor.py, we modified the original code to print the loss after every step for better monitoring the training process. 
+3) In the train_lossfig.py, we modified the original code to print the loss after every step for better monitoring the training process. 
 
 ## Prerequisties
 1) Pre-trained VGG19 normalised network
@@ -26,6 +26,7 @@ By default,
 4) The MS-COCO images dataset for training lies in the folder "../MS_COCO/".
 5) The WikiArt images dataset for training lies in the folder "../WikiArt/". 
 6) The checkpoint files of trained models lie in the folder "./models/models.xx.xx/." (You should unzip the model.zip file before inferring and change this path to the folder that holds the trained weights for the model you want to train/check. For example, folder "./models/models.Adain.2.0.10^-3/." holds the ckpts for our trained model with AadIN layer and weights = 2.0, learning_rate = 10^-4.)
+PS:The model.zip file is uploaded through gradescope.(if it's not too large to submit)
 7) After inferring procedure, the stylized images will be generated and output to the folder "./outputs/"
 
 For inferring, you should make sure 1), 2), 3) and 6) are prepared correctly.
