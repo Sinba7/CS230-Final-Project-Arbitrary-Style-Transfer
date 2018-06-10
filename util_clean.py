@@ -1,4 +1,5 @@
-# Utility
+# Utility, modified on https://github.com/elleryqueenhomels/arbitrary_style_transfer.git. 
+# Add a delete funciton to clean out the WikiArt images that are too large to train or have zeor pixel. 
 
 import numpy as np
 import os
@@ -33,6 +34,7 @@ def list_images_del(directory):
     return images
 
 def delete_wrong_images(directory):
+    # Add a delete funciton to clean out the WikiArt images that are too large to train or have zeor pixel. 
     for file in listdir(directory):
         path = join(directory, file)
         print(f"checking validation of {path}...")
