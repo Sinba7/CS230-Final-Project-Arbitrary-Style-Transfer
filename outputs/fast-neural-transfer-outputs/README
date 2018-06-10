@@ -1,0 +1,2 @@
+## This folder contains the outputs of fast-nerual-transfer methods ##
+The code is implemented by https://github.com/hzy46/fast-neural-style-tensorflow.git, we simply used this code to get the outputs fpr comparation  with our own arbitrary style transfer  methods.
