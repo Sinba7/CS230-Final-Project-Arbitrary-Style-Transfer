@@ -1,9 +1,10 @@
-# Adaptive Instance Normalization
+# Matching layers we try to implement: Adaptive Instance Normalization, AdaClip, Histogram Matching and CORAL.
 
 import tensorflow as tf
 
 
 def AdaIN(content, style, epsilon=1e-5):
+    # Adaptive Instance Normalization, modified from https://github.com/eridgd/AdaIN-TF/blob/master/coral.py
     meanC, varC = tf.nn.moments(content, [1, 2], keep_dims=True)
     meanS, varS = tf.nn.moments(style,   [1, 2], keep_dims=True)
 
@@ -80,8 +81,7 @@ def CORAL(content, style, epsilon=1e-5):
         tf.transpose(style_flatten_norm, [0, 2, 1])) + tf.tile(tf.expand_dims(tf.eye(style_shape[3]), 0), 
         [style_shape[0], 1, 1])  # N * C * C
 
-    content_flatten_norm_transfer = tf.matmul(
-        tf.matmul(tf.matrix_inverse(tf_matrix_sqrt(content_flatten_cov_eye)), tf_matrix_sqrt(style_flatten_cov_eye)), content_flatten_norm)
+    content_flatten_norm_transfer = tf.matmul( tf_matrix_sqrt(style_flatten_cov_eye), tf.matmul(tf.matrix_inverse(tf_matrix_sqrt(content_flatten_cov_eye)), content_flatten_norm))
     content_flatten_transfer = content_flatten_norm_transfer * style_std + style_mean
 
     content_transfer = tf.transpose(tf.reshape(content_flatten_transfer, 
