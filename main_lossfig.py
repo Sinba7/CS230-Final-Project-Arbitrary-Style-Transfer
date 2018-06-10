@@ -15,12 +15,11 @@ ENCODER_WEIGHTS_PATH = './vgg19_normalised.npz'
 STYLE_WEIGHTS = [1.5]
 
 MODEL_SAVE_PATHS = [
-    'models/style_weight_2e0.ckpt',
+    'models/models-adain1.5-10^-4/style_weight_2e0.ckpt-71000',
 ]
 
 STYLES = [
-    'shuimohua', 'cat', #'mosaic', 'escher_sphere',
-    	#'lion', 'udnie', 'woman_matisse',
+    'shuimohua', 'mosaic', 'cubist', 'feathers', 'shuimohua3', 'denoised_starry', 'wave'
 ]
 
 
