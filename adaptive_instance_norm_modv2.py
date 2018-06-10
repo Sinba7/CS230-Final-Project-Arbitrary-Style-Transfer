@@ -4,7 +4,7 @@ import tensorflow as tf
 
 
 def AdaIN(content, style, epsilon=1e-5):
-    # Adaptive Instance Normalization, modified from https://github.com/eridgd/AdaIN-TF/blob/master/coral.py
+    # Adaptive Instance Normalization, modified from  https://github.com/elleryqueenhomels/arbitrary_style_transfer.git
     meanC, varC = tf.nn.moments(content, [1, 2], keep_dims=True)
     meanS, varS = tf.nn.moments(style,   [1, 2], keep_dims=True)
 
