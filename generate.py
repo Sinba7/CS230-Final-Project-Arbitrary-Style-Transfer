@@ -4,7 +4,7 @@
 import tensorflow as tf
 
 from style_transfer_net import StyleTransferNet
-from utils import get_images, save_images
+from util_clean import get_images, save_images
 
 
 def generate(contents_path, style_path, encoder_path, model_path, 
