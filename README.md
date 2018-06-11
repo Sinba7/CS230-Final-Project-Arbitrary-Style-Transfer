@@ -7,6 +7,8 @@ We implement our code based on https://github.com/elleryqueenhomels/arbitrary_st
 2) In the adaptive_instance_norm_modv2.py, we wrote the matching function for three other matching method besides AdaIN layer, which are Correlation Alignment layer, Histogram Matching layer and AdaClip layer.
 3) In the train_lossfig.py, we modified the original code to print the loss after every step for better monitoring the training process. 
 
+The generated images of our experiments are in the outputs folder. 
+
 ## Prerequisties
 1) Pre-trained VGG19 normalised network
 2) Microsoft COCO dataset
