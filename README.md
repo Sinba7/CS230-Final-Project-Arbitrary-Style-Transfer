@@ -35,4 +35,4 @@ For inferring, you should make sure 1), 2), 3) and 6) are prepared correctly.
 Of course, you can organize all the files and folders as you want, and what you need to do is just modifying related parameters in the main_lossfig.py file.
 
 ## Poster
-![Test Image 1](https://https://github.com/Sinba7/CS230-Final-Project-Arbitrary-Style-Transfer/image/Arbitrary_Neutral_Style_Transfer_Poster.png)
+![Test Image 1](https://github.com/Sinba7/CS230-Final-Project-Arbitrary-Style-Transfer/blob/master/images/Arbitrary_Neural_Style_Transfer_Poster.png)
